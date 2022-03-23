@@ -150,16 +150,11 @@
 
  ⇒上記のようにテーブル構成を変更すると下記のようなSQLになる
  	SELECT
- 		DISTINCT A.支店コード, 支店.支店名, A.商品数
- 	FROM 支店商品 A
+ 		支店商品.支店コード, 支店.支店名, 支店商品.商品数
+ 	FROM 支店商品
 	INNER JOIN 支店
 		ON 支店商品.支社コード=支店.支社コード
 		AND 支店商品.支店コード=支店.支店コード
-	WHERE NOT EXISTS
-		(
-			SELECT 'X'
-			FROM 支店商品 B
-			WHERE A.商品数 <  A.商品数
-		)
+	WHERE
+		支店商品.商品数 = (SELECT MAX(商品数) FROM 支店商品)
 	;
-
