@@ -20,16 +20,16 @@
 		>NUMBER型
 		（最新バージョン：Oracle Database Release 19c）
 	・SQLServer
-		>float型
+		>decimal 型
 		（最新バージョン：SQLServer 2019）
 	・DB2
-		>DOUBLE
+		>DECIMAL
 		（最新バージョン：13）
 	・PostgreSQL
-		>double precision
+		>decimal
 		（最新バージョン：PostgreSQL 14.4）
 	・MySQL
-		>DOUBLE PRECISION
+		>DECIMAL
 		（最新バージョン：MySQL 8.0）
 
 ※各DBMSの実数を扱えるデータ型で精度が高いものをピックアップ
